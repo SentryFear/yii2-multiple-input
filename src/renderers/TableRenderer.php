@@ -350,9 +350,10 @@ class TableRenderer extends BaseRenderer
 
     private function renderAddButton()
     {
-        $options = [
-            'class' => 'btn multiple-input-list__btn js-input-plus',
-        ];
+        $options = $this->addButtonOptions['options'];
+
+        Html::addCssClass($options, 'btn multiple-input-list__btn js-input-plus');
+
         Html::addCssClass($options, $this->addButtonOptions['class']);
         
         return Html::tag('div', $this->addButtonOptions['label'], $options);
@@ -366,9 +367,10 @@ class TableRenderer extends BaseRenderer
      */
     private function renderRemoveButton()
     {
-        $options = [
-            'class' => 'btn multiple-input-list__btn js-input-remove',
-        ];
+        $options = $this->removeButtonOptions['options'];
+
+        Html::addCssClass($options, 'btn multiple-input-list__btn js-input-remove');
+
         Html::addCssClass($options, $this->removeButtonOptions['class']);
         
         return Html::tag('div', $this->removeButtonOptions['label'], $options);
@@ -382,9 +384,10 @@ class TableRenderer extends BaseRenderer
      */
     private function renderCloneButton()
     {
-        $options = [
-            'class' => 'btn multiple-input-list__btn js-input-clone',
-        ];
+        $options = $this->cloneButtonOptions['options'];
+
+        Html::addCssClass($options, 'btn multiple-input-list__btn js-input-clone');
+
         Html::addCssClass($options, $this->cloneButtonOptions['class']);
 
         return Html::tag('div', $this->cloneButtonOptions['label'], $options);
