@@ -251,6 +251,10 @@ abstract class BaseRenderer extends BaseObject implements RendererInterface
             $this->removeButtonOptions['label'] = Html::tag('i', null, ['class' => 'glyphicon glyphicon-remove']);
         }
 
+        if (!array_key_exists('options', $this->removeButtonOptions)) {
+            $this->removeButtonOptions['options'] = [];
+        }
+
         if (!array_key_exists('class', $this->addButtonOptions)) {
             $this->addButtonOptions['class'] = 'btn btn-default';
         }
@@ -259,12 +263,20 @@ abstract class BaseRenderer extends BaseObject implements RendererInterface
             $this->addButtonOptions['label'] = Html::tag('i', null, ['class' => 'glyphicon glyphicon-plus']);
         }
 
+        if (!array_key_exists('options', $this->addButtonOptions)) {
+            $this->addButtonOptions['options'] = [];
+        }
+
         if (!array_key_exists('class', $this->cloneButtonOptions)) {
             $this->cloneButtonOptions['class'] = 'btn btn-info';
         }
 
         if (!array_key_exists('label', $this->cloneButtonOptions)) {
             $this->cloneButtonOptions['label'] = Html::tag('i', null, ['class' => 'glyphicon glyphicon-duplicate']);
+        }
+
+        if (!array_key_exists('options', $this->cloneButtonOptions)) {
+            $this->cloneButtonOptions['options'] = [];
         }
     }
 
